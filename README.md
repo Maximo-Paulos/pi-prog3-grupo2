@@ -93,7 +93,7 @@ La aplicación debe mostrar una página del tipo 404 Contenido Inexistente si el
 Punto 11 - Loader
 Previo a la carga de contenidos en cualquiera de las páginas debe verse un gif animado, spiner de carga o una leyenda “Cargando…” en caso de que el endpoint demore en responder.
 
-
+pruebo mi git
 
 
 
