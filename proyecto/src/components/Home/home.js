@@ -1,86 +1,122 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import MovieCard from "../Moviecard/MovieCard";
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            valor: "",
-            datos: ""
-        };
-    }
+    this.state = {
+      valor: "",
+      datos: "",
+      datosEnCartel: ""
+    };
+  }
 
-    evitarSubmit(event) {
-        event.preventDefault();
-    }
+  evitarSubmit(event) {
+    event.preventDefault();
+  }
 
-    controlarCambios(event) {
-        this.setState({ valor: event.target.value });
-    }
+  controlarCambios(event) {
+    this.setState({ valor: event.target.value });
+  }
 
-    componentDidMount() {
-        const url = "https://api.themoviedb.org/3/movie/popular?api_key=76928f90251fae431e5a99af6dc4662c";
+  componentDidMount() {
+    const url =
+      "https://api.themoviedb.org/3/movie/popular?api_key=76928f90251fae431e5a99af6dc4662c";
 
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                this.setState({ datos: data });
-                console.log(data);
-            })
-            .catch((error) => {
-                console.log("El error fue: " + error);
-            });
-    }
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ datos: data });
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log("El error fue: " + error);
+      });
 
-render() {
-  return (
-    <div className="container">
-      <h2>Home</h2>
+    const urlEnCartel =
+      "https://api.themoviedb.org/3/movie/now_playing?api_key=76928f90251fae431e5a99af6dc4662c";
 
-      <form
-        className="search-form"
-        onSubmit={(event) => this.evitarSubmit(event)}
-      >
-        <input
-          type="text"
-          name="searchData"
-          placeholder="Buscar..."
-          onChange={(event) => this.controlarCambios(event)}
-          value={this.state.valor}
-        />
+    fetch(urlEnCartel)
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ datosEnCartel: data });
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log("El error fue: " + error);
+      });
+  }
 
-        <button type="submit" className="btn btn-success btn-sm">
-          Buscar
-        </button>
-      </form>
+  render() {
+    return (
+      <div className="container">
+        <h2>Home</h2>
 
-      {this.state.datos === "" ? (
-        <h3>Cargando...</h3>
-      ) : (
-        <div>
-          <h2 className="alert alert-primary">Películas populares</h2>
+        <form
+          className="search-form"
+          onSubmit={(event) => this.evitarSubmit(event)}
+        >
+          <input
+            type="text"
+            name="searchData"
+            placeholder="Buscar..."
+            onChange={(event) => this.controlarCambios(event)}
+            value={this.state.valor}
+          />
 
-          <section className="row cards" id="movies">
-            {this.state.datos.results.map((pelicula) => (
-              <article className="single-card-movie" key={pelicula.id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w342${pelicula.poster_path}`}
-                  className="card-img-top"
-                  alt={pelicula.title}
+          <button type="submit" className="btn btn-success btn-sm">
+            Buscar
+          </button>
+        </form>
+
+        {this.state.datos === "" ? (
+          <h3>Cargando...</h3>
+        ) : (
+          <div>
+            <h2 className="alert alert-primary">Películas populares</h2>
+
+            <section className="row cards" id="movies">
+              {this.state.datos.results.map((pelicula) => (
+                <MovieCard
+                  key={pelicula.id}
+                  pelicula={pelicula}
+                  claseTarjeta="single-card-movie"
                 />
+              ))}
+            </section>
 
-                <div className="cardBody">
-                  <h5 className="card-title">{pelicula.title}</h5>
+            <Link className="btn btn-primary" to="/peliculas/populares">
+              Ver todas
+            </Link>
+          </div>
+        )}
 
-                  <p className="card-text">{pelicula.overview}</p>
-                </div>
-              </article>
-            ))}
-          </section>
-        </div>
-      )}
-    </div>
-  );
+        {this.state.datosEnCartel === "" ? (
+          <h3>Cargando...</h3>
+        ) : (
+          <div>
+            <h2 className="alert alert-primary">Películas en cartel</h2>
+
+            <section className="row cards" id="now-playing">
+              {this.state.datosEnCartel.results.map((pelicula) => (
+                <MovieCard
+                  key={pelicula.id}
+                  pelicula={pelicula}
+                  claseTarjeta="single-card-playing"
+                />
+              ))}
+            </section>
+
+            <Link className="btn btn-primary" to="/peliculas/en-cartel">
+              Ver todas
+            </Link>
+          </div>
+        )}
+      </div>
+    );
+  }
 }
-}
+
 export default Home;
