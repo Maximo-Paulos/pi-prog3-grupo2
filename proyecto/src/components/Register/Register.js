@@ -25,6 +25,13 @@ class Register extends Component {
 
     evitarSubmit(event) {
         event.preventDefault();
+        if (this.state.email === "") {
+            this.setState({
+                error: "Ingresá un email"
+            });
+
+            return;
+        }
         if (this.state.password.length < 6) {
             this.setState({
                 error: "La contraseña debe tener al menos 6 caracteres"
@@ -32,7 +39,24 @@ class Register extends Component {
 
             return;
         }
+        let usuarios = [];
+        let usuariosStorage = localStorage.getItem("usuarios");
 
+        if (usuariosStorage !== null) {
+            usuarios = JSON.parse(usuariosStorage);
+        }
+
+        let usuariosEncontrados = usuarios.filter(
+            (usuario) => usuario.email === this.state.email
+        );
+
+        if (usuariosEncontrados.length > 0) {
+            this.setState({
+                error: "El email ya está en uso"
+            });
+
+            return;
+        }
         this.setState({
             error: ""
         });
@@ -68,7 +92,7 @@ class Register extends Component {
                     {this.state.error !== "" ? (
                         <p>{this.state.error}</p>
                     ) : null}
-                    
+
                     <button type="submit">Crear cuenta</button>
                 </form>
             </div>
