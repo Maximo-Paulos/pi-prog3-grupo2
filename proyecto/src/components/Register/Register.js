@@ -60,6 +60,16 @@ class Register extends Component {
         this.setState({
             error: ""
         });
+        let usuarioNuevo = {
+            email: this.state.email,
+            password: this.state.password
+        };
+
+        usuarios.push(usuarioNuevo);
+
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+        this.props.history.push("/login");
     }
 
     render() {
