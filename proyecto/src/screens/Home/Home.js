@@ -13,13 +13,13 @@ class Home extends Component {
     };
   }
 
-  evitarSubmit(event, tipo) {
+  evitarSubmit(event) {
     event.preventDefault();
+  }
 
+  buscar(tipo) {
     if (this.state.valor !== "") {
-      this.props.history.push(
-        "/resultados/" + tipo + "/" + this.state.valor
-      );
+      this.props.history.push("/resultados/" + tipo + "/" + this.state.valor);
     }
   }
 
@@ -35,7 +35,6 @@ class Home extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({ datos: data });
-        console.log(data);
       })
       .catch((error) => {
         console.log("El error fue: " + error);
@@ -47,8 +46,7 @@ class Home extends Component {
     fetch(urlEnCartel)
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ datosEnCartel: data });
-        console.log(data);
+        this.setState({ datosEnCartel: data }); 
       })
       .catch((error) => {
         console.log("El error fue: " + error);
@@ -62,7 +60,7 @@ class Home extends Component {
 
         <form
           className="search-form"
-          onSubmit={(event) => event.preventDefault()}
+          onSubmit={(event) => this.evitarSubmit(event)}
         >
           <input
             type="text"
@@ -72,10 +70,10 @@ class Home extends Component {
             value={this.state.valor}
           />
 
-          <button type="button" className="search-button" onClick={(event) => this.evitarSubmit(event, "peliculas")}>
+          <button type="button" className="search-button" onClick={(event) => this.buscar("peliculas")}>
             Buscar Peliculas
           </button>
-          <button type="button" className="search-button" onClick={(event) => this.evitarSubmit(event, "series")}>
+          <button type="button" className="search-button" onClick={(event) => this.buscar("series")}>
             Buscar series
           </button>
         </form>
