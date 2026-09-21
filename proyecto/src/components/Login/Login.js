@@ -24,7 +24,7 @@ class Login extends Component {
 
   evitarSubmit(event) {
     event.preventDefault();
-    
+
     let usuarios = [];
     let usuariosStorage = localStorage.getItem("usuarios");
 
@@ -72,6 +72,9 @@ class Login extends Component {
               onChange={(event) => this.controlarPassword(event)}
             />
           </div>
+          {this.state.error !== "" ? (
+            <p>{this.state.error}</p>
+          ) : null}
           <button type="submit">Iniciar sesión</button>
         </form>
       </div>
