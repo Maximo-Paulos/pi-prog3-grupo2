@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 import NotFound from "./screens/NotFound/NotFound";
-import Home from "./screens/Home/Home";
+import Home from "./screens/Home/home";
 import Login from "./screens/Login/Login";
 import Register from "./screens/Register/Register";
 import Detalle from "./screens/Detalle/Detalle";

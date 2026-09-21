@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MovieCard from "../../components/MovieCard/MovieCard";
+import MovieCard from "../../components/Moviecard/MovieCard";
 
 class Resultados extends Component {
     constructor(props) {
@@ -10,16 +10,16 @@ class Resultados extends Component {
             cargando: true
         };
     }
-    obtenerEndpoint() {
-        if (this.props.match.params.tipo === "series") {
-            return "search/tv";
-        }
-
-        return "search/movie";
-    }
 
     pedirResultados() {
-        let endpoint = this.obtenerEndpoint();
+
+        let endpoint;
+
+        if (this.props.match.params.tipo === "series") {
+            endpoint = "search/tv";
+        } else {
+            endpoint = "search/movie";
+        }
         let busqueda = this.props.match.params.busqueda;
 
         let url = "https://api.themoviedb.org/3/" + endpoint + "?api_key=76928f90251fae431e5a99af6dc4662c&query=" + busqueda;
