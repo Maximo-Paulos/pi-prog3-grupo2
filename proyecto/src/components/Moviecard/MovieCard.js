@@ -76,7 +76,7 @@ class MovieCard extends Component {
     return (
       <article className={this.props.claseTarjeta}>
         <img
-          src={`https://image.tmdb.org/t/p/w342${this.props.pelicula.poster_path}`}
+          src={"https://image.tmdb.org/t/p/w342" + this.props.pelicula.poster_path}
           className="card-img-top"
           alt={titulo}
         />

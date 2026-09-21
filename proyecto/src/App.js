@@ -9,6 +9,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Listado from "./components/Listado/Listado";
 import Detalle from "./components/Detalle/Detalle";
+import Favoritos from "./components/Favoritos/Favoritos";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/register" exact={true} component={Register} />
           <Route path="/listado/:tipo/:categoria" exact={true} component={Listado} />
           <Route path="/detalle/:tipo/:id" exact={true} component={Detalle} />
+          <Route path="/favoritos" exact={true} component={Favoritos} />
           <Route component={NotFound} />
         </Switch>
       </main>
