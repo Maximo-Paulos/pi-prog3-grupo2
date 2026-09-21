@@ -8,8 +8,8 @@ import NotFound from "./screens/NotFound/NotFound";
 import Home from "./screens/Home/Home";
 import Login from "./screens/Login/Login";
 import Register from "./screens/Register/Register";
-import Listado from "./screens/Listado/Listado";
 import Detalle from "./screens/Detalle/Detalle";
+import PeliculasPopulares from "./screens/PeliculasPopulares/PeliculasPopulares";
 import Favoritos from "./screens/Favoritos/Favoritos";
 import Resultados from "./screens/Resultados/Resultados";
 
@@ -23,9 +23,9 @@ function App() {
         <Route path="/" exact={true} component={Home} />
         <Route path="/login" exact={true} component={Login} />
         <Route path="/register" exact={true} component={Register} />
-        <Route path="/listado/:tipo/:categoria" exact={true} component={Listado} />
         <Route path="/detalle/:tipo/:id" exact={true} component={Detalle} />
         <Route path="/favoritos" exact={true} component={Favoritos} />
+        <Route path="/peliculas/populares" exact={true} component={PeliculasPopulares} />
         <Route path="/resultados/:tipo/:busqueda" exact={true} component={Resultados} />
         <Route component={NotFound} />
       </Switch>

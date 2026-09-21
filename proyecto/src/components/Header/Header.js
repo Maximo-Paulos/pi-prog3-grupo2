@@ -21,30 +21,13 @@ function Header(props) {
                     <li className="nav-item">
                         <Link className="nav-link" to="/">Home</Link>
                     </li>
-
                     <li className="nav-item">
-                        <Link className="nav-link" to="/listado/peliculas/populares">
-                            Películas populares
-                        </Link>
+                        <Link className="nav-link" to="/peliculas/populares">Películas populares</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/peliculas/en-cartel">En cartel</Link>
                     </li>
 
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/listado/peliculas/en-cartel">
-                            En cartel
-                        </Link>
-                    </li>
-
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/listado/series/populares">
-                            Series populares
-                        </Link>
-                    </li>
-
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/listado/series/al-aire">
-                            Al aire hoy
-                        </Link>
-                    </li>
 
                     {cookies.get("user-auth-cookie") ? (
                         <li className="nav-item">
