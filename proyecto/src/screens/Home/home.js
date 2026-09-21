@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import MovieCard from "../../components/MovieCard/MovieCard";
+import MovieCard from "../../components/Moviecard/MovieCard";
 
 class Home extends Component {
   constructor(props) {
