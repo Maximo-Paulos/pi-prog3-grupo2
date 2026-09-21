@@ -82,12 +82,13 @@ class Home extends Component {
                 <MovieCard
                   key={pelicula.id}
                   pelicula={pelicula}
+                  tipo="peliculas"
                   claseTarjeta="single-card-movie"
                 />
               ))}
             </section>
 
-            <Link className="btn btn-primary" to="/peliculas/populares">
+            <Link className="btn btn-primary" to="/listado/peliculas/populares">
               Ver todas
             </Link>
           </div>
@@ -104,12 +105,13 @@ class Home extends Component {
                 <MovieCard
                   key={pelicula.id}
                   pelicula={pelicula}
+                  tipo="peliculas"
                   claseTarjeta="single-card-playing"
                 />
               ))}
             </section>
 
-            <Link className="btn btn-primary" to="/peliculas/en-cartel">
+            <Link className="btn btn-primary" to="/listado/peliculas/en-cartel">
               Ver todas
             </Link>
           </div>

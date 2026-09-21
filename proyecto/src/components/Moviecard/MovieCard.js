@@ -65,16 +65,21 @@ class MovieCard extends Component {
   }
 
   render() {
+
+    let titulo = this.props.pelicula.title
+  ? this.props.pelicula.title
+  : this.props.pelicula.name;
+
     return (
       <article className={this.props.claseTarjeta}>
         <img
           src={`https://image.tmdb.org/t/p/w342${this.props.pelicula.poster_path}`}
           className="card-img-top"
-          alt={this.props.pelicula.title}
+          alt={titulo}
         />
 
         <div className="cardBody">
-          <h5 className="card-title">{this.props.pelicula.title}</h5>
+          <h5 className="card-title">{titulo}</h5>
 
           <button
             type="button"
@@ -92,12 +97,12 @@ class MovieCard extends Component {
             </p>
           ) : null}
 
-          <Link
-            className="btn btn-primary"
-            to={`/peliculas/detalle/${this.props.pelicula.id}`}
-          >
+           <Link
+             className="btn btn-primary"
+             to={"/" + this.props.tipo + "/detalle/" + this.props.pelicula.id}
+           >
             Ir a detalle
-          </Link>
+            </Link>
 
           {cookies.get("user-auth-cookie") ? (
             <button

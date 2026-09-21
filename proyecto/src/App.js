@@ -7,6 +7,8 @@ import NotFound from "./components/NotFound/NotFound";
 import Home from "./components/Home/home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import Listado from "./components/Listado/Listado";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="/" exact={true} component={Home} />
           <Route path="/login" exact={true} component={Login} />
           <Route path="/register" exact={true} component={Register} />
+          <Route path="/listado/:tipo/:categoria" exact={true} component={Listado} />
           <Route component={NotFound} />
         </Switch>
       </main>
