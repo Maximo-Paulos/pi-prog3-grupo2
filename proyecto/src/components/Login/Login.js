@@ -24,6 +24,29 @@ class Login extends Component {
 
   evitarSubmit(event) {
     event.preventDefault();
+    
+    let usuarios = [];
+    let usuariosStorage = localStorage.getItem("usuarios");
+
+    if (usuariosStorage !== null) {
+      usuarios = JSON.parse(usuariosStorage);
+    }
+
+    let usuariosEncontrados = usuarios.filter(
+      (usuario) => usuario.email === this.state.email && usuario.password === this.state.password
+    );
+
+    if (usuariosEncontrados.length === 0) {
+      this.setState({
+        error: "Credenciales incorrectas"
+      });
+
+      return;
+    }
+
+    this.setState({
+      error: ""
+    });
   }
 
   render() {
