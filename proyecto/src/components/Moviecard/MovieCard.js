@@ -70,8 +70,8 @@ class MovieCard extends Component {
   render() {
 
     let titulo = this.props.pelicula.title
-  ? this.props.pelicula.title
-  : this.props.pelicula.name;
+      ? this.props.pelicula.title
+      : this.props.pelicula.name;
 
     return (
       <article className={this.props.claseTarjeta}>
@@ -100,13 +100,13 @@ class MovieCard extends Component {
             </p>
           ) : null}
 
-           <Link
-             className="btn btn-primary"
-             to={"/detalle/" + this.props.tipo + "/" + this.props.pelicula.id}
+          <Link
+            className="btn btn-primary"
+            to={"/detalle/" + this.props.tipo + "/" + this.props.pelicula.id}
 
-           >
+          >
             Ir a detalle
-            </Link>
+          </Link>
 
           {cookies.get("user-auth-cookie") ? (
             <button
