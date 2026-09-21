@@ -36,6 +36,8 @@ nav {
 .search-button:hover {
     background-color: #3e6a8a;
 }
+/*hasta aqui*/
+
 .filter-form {
     grid-template-columns: 1fr;
 }

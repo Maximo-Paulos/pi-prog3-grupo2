@@ -62,7 +62,7 @@ class Home extends Component {
 
         <form
           className="search-form"
-          onSubmit={(event) => this.evitarSubmit(event)}
+          onSubmit={(event) => event.preventDefault()}
         >
           <input
             type="text"

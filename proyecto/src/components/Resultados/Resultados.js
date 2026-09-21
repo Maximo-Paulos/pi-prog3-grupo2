@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MovieCard from "../Moviecard/MovieCard";
 
 class Resultados extends Component {
     constructor(props) {
@@ -45,12 +46,21 @@ class Resultados extends Component {
             <div>
                 <h2>Resultados de búsqueda</h2>
                 {this.state.cargando ? (
-          <h3>Cargando...</h3>
-        ) : (
-          <h3>Resultados recibidos</h3>
-        )}
+                    <h3>Cargando...</h3>
+                ) : (
+                    <section className="cards">
+                        {this.state.resultados.map((resultado) => (
+                            <MovieCard
+                                key={resultado.id}
+                                pelicula={resultado}
+                                tipo={this.props.match.params.tipo}
+                                claseTarjeta="single-card-movie"
+                            />
+                        ))}
+                    </section>
+                )}
             </div>
-            
+
         );
     }
 }
