@@ -99,7 +99,8 @@ class MovieCard extends Component {
 
            <Link
              className="btn btn-primary"
-             to={"/" + this.props.tipo + "/detalle/" + this.props.pelicula.id}
+             to={"/detalle/" + this.props.tipo + "/" + this.props.pelicula.id}
+
            >
             Ir a detalle
             </Link>
