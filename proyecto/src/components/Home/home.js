@@ -13,8 +13,14 @@ class Home extends Component {
     };
   }
 
-  evitarSubmit(event) {
+  evitarSubmit(event, tipo) {
     event.preventDefault();
+
+    if (this.state.valor !== "") {
+      this.props.history.push(
+        "/resultados/" + tipo + "/" + this.state.valor
+      );
+    }
   }
 
   controlarCambios(event) {
@@ -56,7 +62,7 @@ class Home extends Component {
 
         <form
           className="search-form"
-          onSubmit={(event) => this.evitarSubmit(event)}
+          onSubmit={(event) => event.preventDefault()}
         >
           <input
             type="text"
@@ -66,8 +72,11 @@ class Home extends Component {
             value={this.state.valor}
           />
 
-          <button type="submit" className="btn btn-success btn-sm">
-            Buscar
+          <button type="button" className="search-button" onClick={(event) => this.evitarSubmit(event, "peliculas")}>
+            Buscar Peliculas
+          </button>
+          <button type="button" className="search-button" onClick={(event) => this.evitarSubmit(event, "series")}>
+            Buscar series
           </button>
         </form>
 

@@ -22,9 +22,22 @@ nav {
     padding: .5rem 0;
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
     column-gap: 5px;
 }
+/* Estilos para los botones de búsqueda */
+.search-button {
+    background-color: #1f3c5b;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.search-button:hover {
+    background-color: #3e6a8a;
+}
+/*hasta aqui*/
+
 .filter-form {
     grid-template-columns: 1fr;
 }
