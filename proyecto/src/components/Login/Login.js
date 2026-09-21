@@ -46,9 +46,9 @@ class Login extends Component {
 
       return;
     }
-    
-    cookies.set("user-auth-cookie", this.state.email);
 
+    cookies.set("user-auth-cookie", this.state.email);
+    this.props.history.push("/");
     this.setState({
       error: ""
     });
