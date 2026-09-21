@@ -131,7 +131,17 @@ class Detalle extends Component {
                 <li key={genero.id}>{genero.name}</li>
               ))}
             </ul>
-
+            {cookies.get("user-auth-cookie") ? (
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => this.agregarQuitarFavorito()}
+              >
+                {this.state.esFavorito
+                  ? "Quitar de favoritos"
+                  : "Agregar a favoritos"}
+              </button>
+            ) : null}
           </div>
         )}
       </div>
