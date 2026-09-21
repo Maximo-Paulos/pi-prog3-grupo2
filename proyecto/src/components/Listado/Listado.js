@@ -109,7 +109,7 @@ class Listado extends Component {
     if (this.state.filtro !== "") {
       contenidosFiltrados = this.state.contenidos.filter((contenido) => {
         let titulo = contenido.title ? contenido.title : contenido.name;
-        return titulo === this.state.filtro;
+        return titulo.toLowerCase().includes(this.state.filtro.toLowerCase());
       });
     }
 
