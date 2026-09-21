@@ -54,12 +54,15 @@ class MovieCard extends Component {
         esFavorito: false
       });
     } else {
-      favoritos.push(this.props.pelicula);
+      let nuevoFavorito = this.props.pelicula;
+      nuevoFavorito.tipo = this.props.tipo;
+      favoritos.push(nuevoFavorito);
 
       this.setState({
         esFavorito: true
       });
     }
+
 
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
   }
