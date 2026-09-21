@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import NotFound from "./components/NotFound/NotFound";
-import Home from "./screens/Home/home";
+import Home from "./screens/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Listado from "./components/Listado/Listado";
