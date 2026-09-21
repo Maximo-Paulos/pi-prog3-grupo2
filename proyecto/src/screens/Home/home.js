@@ -97,7 +97,7 @@ class Home extends Component {
               ))}
             </section>
 
-            <Link className="btn btn-primary" to="/listado/peliculas/populares">
+            <Link className="btn btn-primary" to="/peliculas/populares">
               Ver todas
             </Link>
           </div>
@@ -120,7 +120,7 @@ class Home extends Component {
               ))}
             </section>
 
-            <Link className="btn btn-primary" to="/listado/peliculas/en-cartel">
+            <Link className="btn btn-primary" to="/peliculas/en-cartel">
               Ver todas
             </Link>
           </div>

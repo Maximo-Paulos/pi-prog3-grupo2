@@ -10,6 +10,7 @@ import Login from "./screens/Login/Login";
 import Register from "./screens/Register/Register";
 import Detalle from "./screens/Detalle/Detalle";
 import PeliculasPopulares from "./screens/PeliculasPopulares/PeliculasPopulares";
+import PeliculasEnCartel from "./screens/PeliculasEnCartel/PeliculasEnCartel";
 import Favoritos from "./screens/Favoritos/Favoritos";
 import Resultados from "./screens/Resultados/Resultados";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/detalle/:tipo/:id" exact={true} component={Detalle} />
         <Route path="/favoritos" exact={true} component={Favoritos} />
         <Route path="/peliculas/populares" exact={true} component={PeliculasPopulares} />
+        <Route path="/peliculas/en-cartel" exact={true} component={PeliculasEnCartel} />
         <Route path="/resultados/:tipo/:busqueda" exact={true} component={Resultados} />
         <Route component={NotFound} />
       </Switch>
