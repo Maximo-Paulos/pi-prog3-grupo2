@@ -238,6 +238,172 @@ footer.alert-primary {
     color: #ffffff;
 }
 
+body {
+    margin: 0;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-main {
+    flex-grow: 1;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.site-title {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.site-title a {
+    color: #1f3c5b;
+    text-decoration: none;
+}
+
+.site-navigation {
+    display: block;
+    background-color: #1f3c5b;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.site-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav-item {
+    list-style: none;
+}
+
+.site-nav-link,
+.logout-button {
+    display: block;
+    color: #ffffff;
+    border: 0;
+    border-radius: 4px;
+    margin: 0.15rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.site-nav-link:hover,
+.logout-button:hover {
+    color: #1f3c5b;
+    background-color: #ffffff;
+    font-weight: normal;
+}
+
+.section-title {
+    background-color: #1f3c5b;
+    border: 1px solid #1f3c5b;
+    color: #ffffff;
+    border-radius: 6px;
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+    padding: 0.75rem 1.25rem;
+}
+
+.action-button,
+.search-button {
+    display: inline-block;
+    border: 1px solid #3e6a8a;
+    border-radius: 4px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.65rem 0.75rem;
+}
+
+.action-button {
+    background-color: #3e6a8a;
+}
+
+.search-button {
+    background-color: #1f3c5b;
+    border-color: #1f3c5b;
+}
+
+.action-button:hover {
+    background-color: #1f3c5b;
+    border-color: #1f3c5b;
+}
+
+.search-button:hover {
+    background-color: #3e6a8a;
+    border-color: #3e6a8a;
+}
+
+.cards .action-button {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+#movies + .action-button,
+#now-playing + .action-button {
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.cards .card-image {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.card-heading {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.cards .card-description {
+    line-height: 1.4;
+    margin: 0.75rem 0;
+}
+
+.site-footer {
+    background-color: #1f3c5b;
+    border: 1px solid #1f3c5b;
+    color: #ffffff;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.site-footer-text {
+    margin: 0;
+}
+
+@media (max-width: 765px) {
+    .site-nav-item {
+        width: 100%;
+    }
+
+    .site-nav-link,
+    .logout-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 @media (max-width: 992px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
