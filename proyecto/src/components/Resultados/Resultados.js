@@ -25,7 +25,9 @@ class Resultados extends Component {
         let url = "https://api.themoviedb.org/3/" + endpoint + "?api_key=76928f90251fae431e5a99af6dc4662c&query=" + busqueda;
 
         fetch(url)
-            .then((response) => response.json())
+            .then((response) => {
+                return response.json();
+            })
             .then((data) => {
                 this.setState({
                     resultados: data.results,
