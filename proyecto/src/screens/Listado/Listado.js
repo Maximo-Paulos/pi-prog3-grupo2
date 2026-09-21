@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MovieCard from "../Moviecard/MovieCard";
+import MovieCard from "../../components/MovieCard/MovieCard";
 
 class Listado extends Component {
   constructor(props) {

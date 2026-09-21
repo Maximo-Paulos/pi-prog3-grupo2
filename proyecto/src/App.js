@@ -3,14 +3,15 @@ import { Route, Switch } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import NotFound from "./components/NotFound/NotFound";
-import Home from "./screens/Home/home";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import Listado from "./components/Listado/Listado";
-import Detalle from "./components/Detalle/Detalle";
-import Favoritos from "./components/Favoritos/Favoritos";
-import Resultados from "./components/Resultados/Resultados";
+
+import NotFound from "./screens/NotFound/NotFound";
+import Home from "./screens/Home/Home";
+import Login from "./screens/Login/Login";
+import Register from "./screens/Register/Register";
+import Listado from "./screens/Listado/Listado";
+import Detalle from "./screens/Detalle/Detalle";
+import Favoritos from "./screens/Favoritos/Favoritos";
+import Resultados from "./screens/Resultados/Resultados";
 
 
 function App() {
