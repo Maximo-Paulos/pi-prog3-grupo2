@@ -10,6 +10,7 @@ import Register from "./components/Register/Register";
 import Listado from "./components/Listado/Listado";
 import Detalle from "./components/Detalle/Detalle";
 import Favoritos from "./components/Favoritos/Favoritos";
+import Resultados from "./components/Resultados/Resultados";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/listado/:tipo/:categoria" exact={true} component={Listado} />
           <Route path="/detalle/:tipo/:id" exact={true} component={Detalle} />
           <Route path="/favoritos" exact={true} component={Favoritos} />
+          <Route path="/resultados/:tipo/:busqueda" exact={true} component={Resultados}/>
           <Route component={NotFound} />
         </Switch>
       </main>
