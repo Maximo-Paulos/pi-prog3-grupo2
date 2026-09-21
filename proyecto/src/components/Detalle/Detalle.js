@@ -89,10 +89,13 @@ class Detalle extends Component {
 
       this.setState({ esFavorito: false });
     } else {
-      favoritos.push(this.state.contenido);
-
-      this.setState({ esFavorito: true });
-    }
+        let nuevoFavorito = this.state.contenido;
+        nuevoFavorito.tipo = this.props.match.params.tipo;
+        favoritos.push(nuevoFavorito);
+  
+        this.setState({ esFavorito: true });
+      }
+  
 
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
   }
